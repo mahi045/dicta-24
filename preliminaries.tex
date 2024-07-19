@@ -1,0 +1,40 @@
+\section{Preliminaries}
+\subsection*{Fuzzy Image Processing}
+Fuzzy image processing encompasses a range of techniques designed to understand, represent, and process images, along with their segments and features, as {\em fuzzy sets} (see Figure \ref{fig:fii}). The process begins with the {\em fuzzification} (or encoding) of image data, followed by the {\em defuzzification} (or decoding) of the results. These steps enable the application of fuzzy techniques to image processing. At the core of fuzzy image processing lies {\em membership modification} \cite{Fuzzy}. The workflow of fuzzy image processing is illustrated in~\Cref{fig:fii}.
+
+\begin{figure*}
+    \centering
+    \begin{tikzpicture}[
+        node distance=2cm and 3cm,
+        every node/.style={draw, align=center, rounded corners},
+        every edge/.style={draw, -{Latex[length=3mm]}}
+    ]
+    
+    % Nodes
+    \node (expert) {expert knowledge};
+    \node (fuzzification) [below left=of expert] {image\\ fuzzification};
+    \node (modification) [below=of expert] {membership\\ modification};
+    \node (defuzzification) [below right=of expert] {image\\ defuzzification};
+    \node (fuzzy) [below=of modification] {fuzzy logic \\ fuzzy set theory};
+    
+    % Edges
+    \draw[->] (expert) -- (fuzzification);
+    \draw[->] (expert) -- (modification);
+    \draw[->] (expert) -- (defuzzification);
+    \draw[->] (fuzzification) -- (modification);
+    \draw[->] (modification) -- (defuzzification);
+    \draw[->] (fuzzy) -- (fuzzification);
+    \draw[->] (fuzzy) -- (modification);
+    \draw[->] (fuzzy) -- (defuzzification);
+    \end{tikzpicture}
+    \caption{The workflow of fuzzy image processing}
+    \label{fig:fii}
+\end{figure*}
+\subsection*{Fuzzy Sets for Intensity Transformation}
+Contrast enhancement is one of the principal
+applications of intensity transformations. We can state the process of enhancing the contrast of a gray-scale image using the following rules \cite{gonzalez2008digital}:
+\begin{itemize}
+    \item IF a pixel is \textbf{dark}, THEN make it \textbf{darker}
+    \item IF a pixel is \textbf{gray}, THEN make it \textbf{gray}
+    \item IF a pixel is \textbf{bright}, THEN make it \textbf{brighter}
+\end{itemize}

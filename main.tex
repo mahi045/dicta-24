@@ -1,0 +1,228 @@
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.20 of 2017/10/04
+%
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+%
+\usepackage{graphicx}
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+%
+% If you use the hyperref package, please uncomment the following line
+% to display URLs in blue roman font according to Springer's eBook style:
+% \renewcommand\UrlFont{\color{blue}\rmfamily}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    }
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{positioning}
+\usepackage{amsmath}
+\usepackage{cleveref}
+\newcommand{\transform}[1]{\mathsf{T}(#1)}
+\usetikzlibrary{arrows.meta, positioning}
+\begin{document}
+%
+% \title{Image Contrast Enhancement using Fuzzy Technique with Parameter Determination using Metaheuristics}
+
+\title{Image Contrast Enhancement using Fuzzy Technique with Membership Function Determination using Metaheuristics}
+%
+%\titlerunning{Abbreviated paper title}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+% \author{Mohimenul Kabir\inst{1} \and
+% Jaiaid Mobin\inst{2} \and
+%  Ahmad Hassanat\inst{3} \and 
+% M. Sohel Rahman\inst{2}\thanks{Corresponding Author: \url{msrahman@cse.buet.ac.bd}}}
+% %
+% \authorrunning{Kabir et al.}
+% \titlerunning{Image Contrast Enhancement}
+% % First names are abbreviated in the running head.
+% % If there are more than two authors, 'et al.' is used.
+% %
+% \institute{
+% National University of Singapore
+% \and
+% Bangladesh University of Engineering \& Technology \and
+% Mutah University}
+%
+\maketitle              % typeset the header of the contribution
+%
+\begin{abstract}
+In this work, we have presented a way to increase the contrast of an image. Our target is to find a transformation that will be image-specific. We have used a fuzzy system as our transformation function. To tune the system according to an image, we have used the Genetic Algorithm and Hill Climbing in multiple ways to evolve the fuzzy system and conducted several experiments. Different variants of the method are tested on several images and two variants that are superior to others in terms of fitness are selected. We have also conducted a survey to assess the visual improvement of the enhancements made by the two variants. The survey indicates that one of the methods can enhance the contrast of the images visually.
+\end{abstract}
+
+\begin{IEEEkeywords}
+image enhancement, metaheuristics,  fuzzy logic, genetic algorithm
+\end{IEEEkeywords}
+%
+%
+%
+\input{introduction.tex}
+\input{literature_review.tex}
+\input{preliminaries.tex}
+\input{problem_definition.tex}
+\input{methodology.tex}
+\input{experiments.tex}
+\input{conclusion.tex}
+
+\iffalse
+\paragraph{Sample Heading (Fourth Level)}
+The contribution should contain no more than four levels of
+headings. Table~\ref{tab1} gives a summary of all heading levels.
+
+\begin{table}
+\caption{Table captions should be placed above the
+tables.}\label{tab1}
+\begin{tabular}{|l|l|l|}
+\hline
+Heading level &  Example & Font size and style\\
+\hline
+Title (centered) &  {\Large\bfseries Lecture Notes} & 14 point, bold\\
+1st-level heading &  {\large\bfseries 1 Introduction} & 12 point, bold\\
+2nd-level heading & {\bfseries 2.1 Printing Area} & 10 point, bold\\
+3rd-level heading & {\bfseries Run-in Heading in Bold.} Text follows & 10 point, bold\\
+4th-level heading & {\itshape Lowest Level Heading.} Text follows & 10 point, italic\\
+\hline
+\end{tabular}
+\end{table}
+
+
+\noindent Displayed equations are centered and set on a separate
+line.
+\begin{equation}
+x + y = z
+\end{equation}
+Please try to avoid rasterized images for line-art diagrams and
+schemas. Whenever possible, use vector graphics instead (see
+Fig.~\ref{fig1}).
+
+\begin{figure}
+\includegraphics[width=\textwidth]{fig1.eps}
+\caption{A figure caption is always placed below the illustration.
+Please note that short captions are centered, while long ones are
+justified by the macro package automatically.} \label{fig1}
+\end{figure}
+
+\begin{theorem}
+This is a sample theorem. The run-in heading is set in bold, while
+the following text appears in italics. Definitions, lemmas,
+propositions, and corollaries are styled the same way.
+\end{theorem}
+%
+% the environments 'definition', 'lemma', 'proposition', 'corollary',
+% 'remark', and 'example' are defined in the LLNCS documentclass as well.
+%
+\begin{proof}
+Proofs, examples, and remarks have the initial word in italics,
+while the following text appears in normal font.
+\end{proof}
+For citations of references, we prefer the use of square brackets
+and consecutive numbers. Citations using labels or the author/year
+convention are also acceptable. The following bibliography provides
+a sample reference list with entries for journal
+articles~\cite{ref_article1}, an LNCS chapter~\cite{ref_lncs1}, a
+book~\cite{ref_book1}, proceedings without editors~\cite{ref_proc1},
+and a homepage~\cite{ref_url1}. Multiple citations are grouped
+\cite{ref_article1,ref_lncs1,ref_book1},
+\cite{ref_article1,ref_book1,ref_proc1,ref_url1}.
+\fi
+%
+% ---- Bibliography ----
+%
+% BibTeX users should specify bibliography style 'splncs04'.
+% References will then be sorted and formatted in the correct style.
+%
+% \bibliographystyle{named}
+% \bibliography{mybibliography}
+
+% \section*{Code and Data Availability}
+% The code and data can be found at the following link: \href{https://dicta2024.dictaconference.org}{redacted for review version}%\url{ https://bitbucket.org/mahi045/image-enhancement/src/master/}
+
+% \section*{Conflict of Interest}
+% The authors declare no conflict of interest.
+
+\bibliographystyle{IEEEtran}
+\bibliography{main}
+% \begin{thebibliography}{00}
+% \bibitem{cuckoo_search_and_PSO}
+% Ye, Zhiwei, Mingwei Wang, Zhengbing Hu, and Wei Liu. "An adaptive image enhancement technique by combining cuckoo search and particle swarm optimization algorithm." Computational intelligence and neuroscience 2015 (2015).
+
+% \bibitem{ACO_GA_SA}
+% Hoseini, Pourya, and Mahrokh G. Shayesteh. "Efficient contrast enhancement of images using hybrid ant colony optimisation, genetic algorithm, and simulated annealing." Digital Signal Processing 23.3 (2013): 879-893.
+
+% \bibitem{draa2014artificial}
+% A. Draa and A. Bouaziz. (2014). An artificial bee colony algorithm for image contrast enhancement. Swarm and Evolutionary Computation. 16. 10.1016/j.swevo.2014.01.003. 
+% \bibitem{hashemi2010image} Sara Hashemi, Soheila Kiani, Navid Noroozi, and Mohsen Ebrahimi Moghaddam. 2010. An image contrast enhancement method based on genetic algorithm. Pattern Recogn. Lett. 31, 13 (October 2010), 1816–1824. 
+
+% \bibitem{fuzzy_plus_meta}
+% Fernandez, Alberto, Victoria Lopez, Maria Jose del Jesus, and Francisco Herrera. "Revisiting evolutionary fuzzy systems: Taxonomy, applications, new trends and challenges." Knowledge-Based Systems 80 (2015): 109-121.
+  
+
+% \bibitem{gonzalez2008digital} Rafael C. Gonzalez and Richard E. Woods. 2006. Digital Image Processing (3rd Edition). Prentice-Hall, Inc., USA.
+% \bibitem{Luke2009Metaheuristics} Sean Luke, 2013, Essentials of Metaheuristics, Lulu, second edition.
+% \bibitem{stark2000adaptive} J. A. Stark, "Adaptive image contrast enhancement using generalizations of histogram equalization," in IEEE Transactions on Image Processing, vol. 9, no. 5, pp. 889-896, May 2000.
+% doi: 10.1109/83.841534
+% \bibitem{shanmugavadivu2014particle} P. Shanmugavadivu, K. Balasubramanian,
+% Particle swarm optimized multi-objective histogram equalization for image enhancement,
+% Optics \& Laser Technology, Volume 57, 2014,
+% Pages 243-251,
+% ISSN 0030-3992,
+% \url{https://doi.org/10.1016/j.optlastec.2013.07.013}.
+% \bibitem{oloyede2019new} Oloyede, M., Hancke, G., Myburgh, H. et al. A new evaluation function for face image enhancement in unconstrained environments using metaheuristic algorithms. J Image Video Proc. 2019, 27 (2019).\url{https://doi.org/10.1186/s13640-019-0418-7}
+% \bibitem{zhu2012adaptive} Youlian Zhu, Cheng Huang,
+% An Adaptive Histogram Equalization Algorithm on the Image Gray Level Mapping,
+% Physics Procedia,
+% Volume 25,
+% 2012,
+% Pages 601-608,
+% ISSN 1875-3892,
+% \url{https://doi.org/10.1016/j.phpro.2012.03.132}.
+% \bibitem{s2018image}
+% Joshi, Sandeep \& Kumar, Samrudh. (2018). Image contrast enhancement using fuzzy logic. 
+% \bibitem{munteanu2004gray}
+% C. Munteanu and A. Rosa, "Gray-scale image enhancement as an automatic process driven by evolution," in IEEE Transactions on Systems, Man, and Cybernetics, Part B (Cybernetics), vol. 34, no. 2, pp. 1292-1298, April 2004.
+% doi: 10.1109/TSMCB.2003.818533
+% \bibitem{samanta2018log}
+% Samanta, Sourav \& Mukherjee, Amartya \& Ashour, Amira S. \& Dey, Nilanjan \& Tavares, Joao \& ABDESSALEMKARAA, WAHIBA \& Taiar, Redha \& Azar, Ahmad \& Hassanien, Aboul Ella. (2018). Log Transform Based Optimal Image Enhancement Using Firefly Algorithm for Autonomous Mini Unmanned Aerial Vehicle: An Application of Aerial Photography. International Journal of Image and Graphics. 18. 1850019. 10.1142/S0219467818500195. 
+% \bibitem{bhandari2019cuckoo}
+% Bhandari, A. \& Maurya, Shubham. (2019). Cuckoo search algorithm-based brightness preserving histogram scheme for low-contrast image enhancement. Soft Computing. 10.1007/s00500-019-03992-7. 
+% \bibitem{dos2009differential}
+% Coelho, Leandro \& Sauer, João \& Rudek, Marcelo. (2009). Differential evolution optimization combined with chaotic sequences for image contrast enhancement. Chaos, Solitons \& Fractals. 42. 522-529. 10.1016/j.chaos.2009.01.012. 
+% \bibitem{braik2007particle}
+% Braik, Malik \& Sheta, Alaa \& Ayesh, Aladdin. (2007). Particle swarm optimisation enhancement approach for improving image quality. International Journal of Innovative Computing and Applications. 1. 10.1504/IJICA.2007.016795. 
+% \bibitem{unknown}
+% Joshi, Sandeep \& Kumar, Samrudh. (2018). Image contrast enhancement using fuzzy logic. 
+% \bibitem{Fuzzy}
+% Haußecker, Horst \& Tizhoosh, Hamid. (1999). Fuzzy Image Processing. 10.1016/B978-012379777-3/50017-0. 
+
+% \bibitem{gamma}
+% A. S. Tarawneh, A. B. Hassanat, I. Elkhadiri, D. Chetverikov and K. Almohammadi, "Automatic Gamma Correction Based on Root-Mean-Square-Error Maximization," 2020 International Conference on Computing and Information Technology (ICCIT-1441), 2020, pp. 1-5, doi: 10.1109/ICCIT-144147971.2020.9213752.
+
+% \bibitem{iqr}
+% Rousseeuw, P.J. and Hubert, M., 2011. Robust statistics for outlier detection. Wiley interdisciplinary reviews: Data mining and knowledge discovery, 1(1), pp.73-79.
+
+% \bibitem{guan2009image}
+% Singh, G., \& Mittal, A. (2014). Various image enhancement techniques-a critical review. International Journal of Innovation and Scientific Research, 10(2), 267-274.
+% \bibitem{singh2015histogram}
+% Singh, Ravindra Pal, and Manish Dixit. "Histogram equalization: a strong technique for image enhancement." International Journal of Signal Processing, Image Processing and Pattern Recognition 8, no. 8 (2015): 345-352.
+
+% \bibitem{ooi2009bi}
+% Ooi, C. H., Kong, N. S. P., \& Ibrahim, H. (2009). Bi-histogram equalization with a plateau limit for digital image enhancement. IEEE transactions on consumer electronics, 55(4), 2072-2080.
+
+% \bibitem{singh2014various}
+% Singh, G., \& Mittal, A. (2014). Various image enhancement techniques-a critical review. International Journal of Innovation and Scientific Research, 10(2), 267-274.
+
+
+
+% \end{thebibliography}
+%
+\end{document}

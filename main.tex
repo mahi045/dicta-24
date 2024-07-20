@@ -5,7 +5,12 @@
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
 %
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
 \usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
 % Used for displaying a sample figure. If possible, figure files should
 % be included in EPS format.
 %
@@ -24,7 +29,6 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usetikzlibrary{positioning}
-\usepackage{amsmath}
 \usepackage{cleveref}
 \newcommand{\transform}[1]{\mathsf{T}(#1)}
 \newcommand{\fitness}[1]{\mathsf{Fitness}(#1)}
@@ -32,6 +36,9 @@
 \newcommand{\edge}[1]{\mathsf{ne}(#1)}
 \newcommand{\entropy}[1]{\mathsf{H}(#1)}
 \usetikzlibrary{arrows.meta, positioning}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
 \begin{document}
 %
 % \title{Image Contrast Enhancement using Fuzzy Technique with Parameter Determination using Metaheuristics}

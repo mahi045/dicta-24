@@ -72,13 +72,13 @@ Every meta-heuristics technique starts with some (usually randomly generated) in
 \label{subsection:fitness_assessment}
 We will formulate the enhancement's quality/fitness $F$ using the quality function mentioned in Equation \ref{eqn:fitness}. There are some terms in Equation \ref{eqn:fitness} which we will explain now, 
 \begin{equation} \label{eqn:fitness}
-F = Fitness(I) = log(log(E(I_s)))*\frac{ne(I_s)}{M*N}*H(I_s)
+F = \fitness{I} = \log{\log{\intensity{I_s}}} \times \frac{\edge{I_s}}{M \times N} \times \entropy{I_s}
 \end{equation}
 \begin{description}
     \item[$I_s$] $=$ image after Applying Sobel filter on $I$
-    \item[$E(I)$] $=$ sum of intensity of image $I$
-    \item[$ne(I)$] $=$ number of edge pixel in $I$
-    \item[$H(I)$] $=$ entropy of image $I$
+    \item[$\intensity{I}$] $=$ sum of intensity of image $I$
+    \item[$\edge{I}$] $=$ number of edge pixel in $I$
+    \item[$\entropy{I}$] $=$ entropy of image $I$
     \item[$M$] $=$ width of $I$
     \item[$N$] $=$ height of $I$
 \end{description}
@@ -95,7 +95,7 @@ v_0 = \frac{\sum\limits_{i=1}^n\mu_{i}(z_0) * v}{\sum\limits_{i=1}^n\mu_{i}(z_0)
 \end{equation}
 Here,
 \begin{description}
-    \item[$\mu_{i}(z_0) =$] fuzzy level of the image pixel with value $z_0$
+    \item[$\mu_{i}(z_0) = $] \quad fuzzy level of the image pixel with value $z_0$
     \item[$v =$] constant/mutable value (depending on the algorithm variant) used in the defuzzification 
 \end{description}
 

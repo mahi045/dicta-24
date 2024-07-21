@@ -1,6 +1,6 @@
 \section{Methodology}
 \label{section:method}
-In this section, we present our metaheuristic-based methodology for image contrast enhancement. Metaheuristic methods share several common features~\cite{glover2003handbook}. Each method begins with an initial set of {\em individuals}, often referred to as the {\em population}. To introduce diversity into the population, special operations, known as {\em mutations}, are applied to generate new populations. In each iteration, the fittest individuals are selected based on a mathematical function known as the {\em fitness function}. This process of generating new population is repeated for a fixed number of iterations, with the fittest population from all iterations is considered the best solution found. While this approach does not guarantee an optimal solution, it is effective at discovering {\em good} solutions within a relatively short time frame. However, the difference between most metaheuristics techniques lies in the way in which the initial population is generated and the following populations are manipulated. 
+In this section, we present our metaheuristic-based methodology for image contrast enhancement. Metaheuristic methods share several common features~\cite{glover2003handbook}. Each method begins with an initial set of {\em individuals}, often referred to as the {\em population}. To introduce diversity into the population, special operations, known as {\em mutations}, are applied to generate new populations. In each iteration, the fittest individuals are selected based on a mathematical function known as the {\em fitness function}. This process of generating a new population is repeated for a fixed number of iterations, with the fittest population from all iterations is considered the best solution found. While this approach does not guarantee an optimal solution, it is effective at discovering {\em good} solutions within a relatively short time frame. However, the difference between most metaheuristics techniques lies in the way in which the initial population is generated and the following populations are manipulated. 
 
 At a high level, we employed both Hill Climbing and Genetic Algorithm-based techniques, which problem specific mutation and crossover operations. 
 % The Hill Climbing technique starts with a single individual and generates new individuals through problem-specific mutation operations on the current individual. 
@@ -93,10 +93,10 @@ Following the literature of image enhancement~\cite{munteanu2004gray}, we calcul
 
 \subsection{Mutation}
 \label{subsec:mutation}
-When generating a new individuals, only the shapes of the functions (i.e., the width of the triangle and trapezoid's oblique line's slope) are tweaked. 
+When generating a new individual, only the shapes of the functions (i.e., the width of the triangle and trapezoid's oblique line's slope) are tweaked. 
 For implementation, we have adapted three hyperparameters, namely, $\mathsf{ChangeProb}$, $\mathsf{MutateMu}$, and $\mathsf{MutateSigma}$. 
-$\mathsf{ChangeProb}$ denotes a probability and during each iteration a membership function is tweaked with a probability of $\mathsf{ChangeProb}$. 
-Whenever, a membership function is tweaked, it is changed by some amount $\delta$, and 
+$\mathsf{ChangeProb}$ denotes a probability and during each iteration, a membership function is tweaked with a probability of $\mathsf{ChangeProb}$. 
+Whenever a membership function is tweaked, it is changed by some amount $\delta$, and 
 the change $\delta$ is sampled from a gaussian distribution with mean and variance $\mathsf{MutateMu}$ and $\mathsf{MutateSigma}$, respectively.
 
 \subsection{Crossover}
@@ -106,7 +106,7 @@ For the crossover in the Genetic Algorithm, both individuals must be of the same
 
 \subsection*{HSV Conversion}
 \label{subsection:method_hsv}
-If the input image is a color image, we need to convert it to the HSV format. In the case of a gray-scale image, there is no need for such a conversion. 
+If the input image is a color image, we need to convert it to the HSV format. The idea of HSV conversion originates from separating color from intensity. We want to change the contrast in image by manipuliting brightness but we do not want to corrupt the color of a feature (See Section \ref{subsection:hsv_color}). In the case of a gray-scale image, there is no need for such a conversion. 
 
 \subsection*{Defuzzification}
 \label{subsection:method_defuzz}
@@ -144,7 +144,7 @@ following the mutation operations outlines in~\Cref{subsec:mutation}.
 Unlike Hill Climbing, the Genetic Algorithm (GA) starts with a number (say, $\mathsf{PopSize}$) of individuals. 
 We use the same evaluation function shown in Equation \ref{eqn:fitness} for fitness evaluation in our GA approach. 
 To introduce variations in the population, GA breeds a new population of children, selects individuals from the old population, and tweaks them to breed new individuals. 
-To keep the footprints of both populations, it joins the parent and children populations to form a new generation of population (\Cref{subsec:crossover}). 
+To keep the footprints of both populations, it joins the parent and children populations to form a new generation of the population (\Cref{subsec:crossover}). 
 In our implementation, we have fixed $\mathsf{PopSize}$ equal to $30$.
 The Genetic Algorithm differs in how parent and child populations are joined. In our Genetic Algorithm procedure, we have experimented with both $(P, P)$ and $(P+P)$ evolution strategies, where $P$ is the $\mathsf{PopSize}$.
 

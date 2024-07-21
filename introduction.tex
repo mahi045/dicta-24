@@ -1,11 +1,11 @@
 \section{Introduction}
 Image enhancement is the process of improving an image's quality and information content~\cite{singh2014various}. The goal is to increase visual differences among image features, making it more suitable for various applications, such as increasing the brightness of dark images for better viewing. Common image enhancement techniques include sharpening, smoothing, contrast enhancement, and noise reduction~\cite{nevriyanto2017image,draa2014artificial,shaked2005sharpness,berkner2001multiscale}. Contrast enhancement, in particular, is applied to images or videos to increase their dynamic range~\cite{hashemi2010image}.
 
-Image enhancement has been practiced as an applicable problem in meta-heuristics for a long time~\cite{cuckoo_search_and_PSO,ACO_GA_SA,munteanu2004gray,mukhopadhyay2023image}. Moreover, the integration of fuzzy systems with meta-heuristic algorithms has been the subject of area within the Computational Intelligence 
-community~\cite{fuzzy_plus_meta,diaz2017new}. Many studies have approached image enhancement as an optimization problem, focusing on modifying the image quality fitness function~\cite{cuckoo_search_and_PSO,draa2014artificial,oloyede2019new}, combining several meta-heuristic algorithms~\cite{cuckoo_search_and_PSO,ACO_GA_SA}, optimizing parameters \cite{samanta2018log} and avoiding local optima \cite{dos2009differential}. However, one aspect that has not received as much attention in image enhancement problems is the adaptation of fuzzy systems. Sandeep and Samrudh~\cite{s2018image} have demonstrated that the variation in the input membership function in a fuzzy system can positively impact image enhancement performance.
+Image enhancement has been practiced as an applicable problem in metaheuristics for a long time~\cite{cuckoo_search_and_PSO,ACO_GA_SA,munteanu2004gray,mukhopadhyay2023image}. Moreover, the integration of fuzzy systems with metaheuristic algorithms has been the subject of area within the Computational Intelligence 
+community~\cite{fuzzy_plus_meta,diaz2017new}. Many studies have approached image enhancement as an optimization problem, focusing on modifying the image quality fitness function~\cite{cuckoo_search_and_PSO,draa2014artificial,oloyede2019new}, combining several metaheuristic algorithms~\cite{cuckoo_search_and_PSO,ACO_GA_SA}, optimizing parameters \cite{samanta2018log} and avoiding local optima \cite{dos2009differential}. However, one aspect that has not received as much attention in image enhancement problems is the adaptation of fuzzy systems. Sandeep and Samrudh~\cite{s2018image} have demonstrated that the variation in the input membership function in a fuzzy system can positively impact image enhancement performance.
 
 This paper addresses the image contrast enhancement problem by using stochastic optimization within a fuzzy logic system. 
-Our primary contribution is the design of a meta-heuristic inspired framework that leverages a fuzzy logic system.
+Our primary contribution is the design of a metaheuristic inspired framework that leverages a fuzzy logic system.
 The core component of the fuzzy logic system is a set of {\em input membership function} that are used to describe an {\em intensity transformation function}. 
 We implement genetic operators that {\em mutate} the fuzzy logic system, thereby enhancing the original image to achieve optimal contrast enhancement. 
 The fuzzy system in our approach is based on simple contrast enhancement rules, outlined in \cite{gonzalez2008digital}, and it operates independently of the input image.
@@ -17,3 +17,12 @@ Instead of directly generating an image, we aim to create a suitable mapping bet
 This task is inherently difficult because, even with only $8$-bit color ($256$ color values), the number of possible mappings is enormous. 
 Exhaustive search through this vast solution space is infeasible, and there is no clear knowledge on how to improve or generate a solution. 
 Therefore, we leverage a metaheuristics framework to address this challenge \cite{Luke2009Metaheuristics}.
+
+The paper is structured as follows:
+~\Cref{section:literature} reviews the literature of image enhancement,
+~\Cref{section:preliminaries} presents the background to understand the methodology of the paper, 
+~\Cref{section:problem} formally presents our problem statement, 
+~\Cref{section:method} presents our methodology for enhancing image contrast, 
+~\Cref{section:experiment} empirically evaluates our proposed methodology for image enhancement, 
+finally, we conclude our work with some indications of future works in~\Cref{section:conclusion}.
+

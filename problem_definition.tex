@@ -1,4 +1,5 @@
 \section{Problem Statement}
+\label{section:problem}
 Our objective is to manipulate image contrast to enhance the sharpness and make image features more visually distinguishable. While image enhancement is inherently subjective, we have employed a fitness function from image enhancement literature to quantify this enhancement \cite{bhandari2020cuckoo,draa2014artificial,dos2009differential,braik2007particle,munteanu2004gray}. This fitness function evaluates the quality of an image. We use a transformation function to enhance the image, which is further optimized using a metaheuristic approach. Thus, the input to our process is an image, and the output is an enhanced version of that image.
 
 For simplicity, we present a formal definition of the problem in the context of a grayscale image. Let $I = f(x, y)$ represent a grayscale image, where $x$ and $y$ denote the pixel positions. The image $I$ has dimensions $M \times N$, thus $0 \leq x < M$ and $0 \leq y < N$. Assume there is a fuzzy logic-based transformation function $\transform{I}$ that modifies the gray value of each pixel, producing an enhanced image $I_e$. More formally,

@@ -1,22 +1,25 @@
 \section{Preliminaries}
+\label{section:preliminaries}
 \subsection*{Fuzzy Image Processing}
 Fuzzy image processing encompasses a range of techniques designed to understand, represent, and process images, along with their segments and features, as {\em fuzzy sets} (see Figure \ref{fig:fii}). The process begins with the {\em fuzzification} (or encoding) of image data, followed by the {\em defuzzification} (or decoding) of the results. These steps enable the application of fuzzy techniques to image processing. At the core of fuzzy image processing lies {\em membership modification}~\cite{haussecker2000fuzzy}. The workflow of fuzzy image processing is illustrated in~\Cref{fig:fii}.
 
 \begin{figure*}
     \centering
     \begin{tikzpicture}[
-        node distance=2cm and 3cm,
+        node distance=1cm and 1cm,
         every node/.style={draw, align=center, rounded corners},
         every edge/.style={draw, -{Latex[length=3mm]}}
     ]
     
     % Nodes
+
     \node (expert) {expert knowledge};
     \node (fuzzification) [below left=of expert] {image\\ fuzzification};
+    \node (input) [left =of fuzzification] {Input image};
     \node (modification) [below=of expert] {membership\\ modification};
     \node (defuzzification) [below right=of expert] {image\\ defuzzification};
     \node (fuzzy) [below=of modification] {fuzzy logic \\ fuzzy set theory};
-    
+    \node (output) [right =of defuzzification] {Output image};
     % Edges
     \draw[->] (expert) -- (fuzzification);
     \draw[->] (expert) -- (modification);
@@ -26,6 +29,8 @@ Fuzzy image processing encompasses a range of techniques designed to understand,
     \draw[->] (fuzzy) -- (fuzzification);
     \draw[->] (fuzzy) -- (modification);
     \draw[->] (fuzzy) -- (defuzzification);
+    \draw[->] (input) -- (fuzzification);
+    \draw[->] (defuzzification) -- (output);
     \end{tikzpicture}
     \caption{The workflow of fuzzy image processing}
     \label{fig:fii}

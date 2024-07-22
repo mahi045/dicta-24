@@ -104,21 +104,11 @@ the change $\delta$ is sampled from a gaussian distribution with mean and varian
 The crossover operation combines multiple individuals (typically two) to produce offspring. There are three classical methods of performing crossover, and in our implementation, we have used {\em uniform crossover}. In the context of our representation, the crossover operation iterates through all the membership functions and combines them by swapping individual functions based on the outcome of a probabilistic coin toss with probability $p$. 
 For the crossover in the Genetic Algorithm, both individuals must be of the same size.
 
-\subsection*{HSV Conversion}
-\label{subsection:method_hsv}
-If the input image is a color image, we need to convert it to the HSV format. The idea of HSV conversion originates from separating color from intensity. We want to change the contrast in image by manipuliting brightness but we do not want to corrupt the color of a feature (See Section \ref{subsection:hsv_color}). In the case of a gray-scale image, there is no need for such a conversion. 
+% \subsection*{HSV Conversion}
+% \label{subsection:method_hsv}
+% If the input image is a color image, we need to convert it to the HSV format. The idea of HSV conversion originates from separating color from intensity. We want to change the contrast in image by manipuliting brightness but we do not want to corrupt the color of a feature (See Section \ref{subsection:hsv_color}). In the case of a gray-scale image, there is no need for such a conversion. 
 
-\subsection*{Defuzzification}
-\label{subsection:method_defuzz}
-Defuzzification refers to converting the fuzzy value to a {\em single crisp} value. For any given input pixel $z_0$, the output crisp value $v_0$ will be as follows.
-\begin{equation} \label{eqn:defuzzy}
-v_0 = \frac{\sum\limits_{i=1}^n\mu_{i}(z_0) * v}{\sum\limits_{i=1}^n\mu_{i}(z_0)};n=3
-\end{equation}
-Here,
-\begin{description}
-    \item[$\mu_{i}(z_0) = $] \quad fuzzy level of the image pixel with value $z_0$
-    \item[$v =$] constant/mutable value used in the defuzzification 
-\end{description}
+
 
 \subsection{Hill Climbing: Details}
 \label{subsection:method_hc}
@@ -175,31 +165,32 @@ The Genetic Algorithm differs in how parent and child populations are joined. In
     
 %     \item We have compared the metric achieved in step $2$ for all five variants and then selected the best two variants. The higher the value of this metric demonstrates better performance.
 % \end{enumerate}
+\paragraph{Hyperparameter Settings}
+We run each of the metaheuristic techniques for 10 minutes and select the best solution found within that time frame. The parameters are set as follows: $\mathsf{ChangeProb} = 0.5$, $\mathsf{MutateMu} = 3$, and $\mathsf{MutateSigma} = 2$.
+% The value of experiment controlling parameters is written in Table \ref{tab:exp_parameters}.
 
-The value of experiment controlling parameters is written in Table \ref{tab:exp_parameters}.
-
-\begin{table}[]
-    \centering
-    \begin{tabular}{| c | c |}
-        \hline
-        \textbf{Hyperparameter name} & \textbf{Value}\\
-        \hline
-        $\mathsf{NumofTest}$ & $5$ \\ 
-        \hline
-        $\mathsf{PerRunTime}$ & $120$ \\
-        \hline
-        $\mathsf{ChangeProb}$ &  $0.5$\\
-        \hline
-        $\mathsf{MutateMu}$ & $3$ \\
-        \hline
-        $\mathsf{MutateSigma}$ & $2$ \\
-        \hline
-        $\mathsf{MembershipSplitProb}$ & $0.1$ \\
-        \hline
-    \end{tabular}
-    \caption{The value of hyperparameters}
-    \label{tab:exp_parameters}
-\end{table}
+% \begin{table}[]
+%     \centering
+%     \begin{tabular}{| c | c |}
+%         \hline
+%         \textbf{Hyperparameter name} & \textbf{Value}\\
+%         \hline
+%         $\mathsf{NumofTest}$ & $5$ \\ 
+%         \hline
+%         $\mathsf{PerRunTime}$ & $120$ \\
+%         \hline
+%         $\mathsf{ChangeProb}$ &  $0.5$\\
+%         \hline
+%         $\mathsf{MutateMu}$ & $3$ \\
+%         \hline
+%         $\mathsf{MutateSigma}$ & $2$ \\
+%         \hline
+%         $\mathsf{MembershipSplitProb}$ & $0.1$ \\
+%         \hline
+%     \end{tabular}
+%     \caption{The value of hyperparameters}
+%     \label{tab:exp_parameters}
+% \end{table}
 
  
 

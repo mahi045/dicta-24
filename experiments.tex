@@ -3,7 +3,7 @@
 In this section, we evaluate our proposed approach and present the results of applying our method to various images. 
 Our experiments were conducted on several images from \cite{draa2014artificial} and additional images (color, grayscale, and text) sourced from the Internet. Specifically, we experimented with a total of 13 images.
 However, we observed that our proposed method performs particularly well on grayscale images. Therefore, we present the results specifically for grayscale images.
-Our experiment study reveal that the genetic algorithm with $(P,P)$ strategy outperforms the genetic algorithm with $(P+P)$ strategy. Thus, we present the results of genetic algorithm with $(P,P)$ strategy.
+Our experiment study reveals that the genetic algorithm with $(P,P)$ strategy outperforms the genetic algorithm with $(P+P)$ strategy. Thus, we present the results of genetic algorithm with $(P,P)$ strategy.
 In the further analysis, we consider the technique:
 \begin{enumerate}
   \item (HC) Hill Climbing (Subsection \ref{subsection:method_hc})
@@ -21,9 +21,11 @@ We visually present outputs of $13$ images. We discuss the attained result by po
 As an outcome of our technique, the enhanced images are more natural looking in the case of Figure ~\ref{fig:07_output_image_ga}, \ref{fig:house_output_image_ga}. Figures \ref{fig:jetplane_output_image_ga},
 \ref{fig:house_output_image_ga} and \ref{fig:13_output_image_ga} we can see the edges are sharper (notice the house shadow and roof tiles, cloud at top of jetplane and mountain body). Overall the histogram is expanded, and the contrast between the black and white portion has increased. Also, it is visually noticeable that method GA is doing better than HC. We will see support behind this claim in Section \Cref{subsection:exp_result_survey}.
 
-A downside of our method is that some black portions (e.g., Figures \ref{fig:house_output_image_hc}, \ref{fig:house_output_image_ga}) are unnecessarily darkened. This can be beneficial in case of overexposed images. For example, both methods in Figure \ref{fig:07_result} and \ref{fig:13_result} succeded in increasing the contrast between the person's background, face, and contrast between letters, and page.
+A downside of our method is that some black portions (e.g., Figures \ref{fig:house_output_image_hc}, \ref{fig:house_output_image_ga}) are unnecessarily darkened. This can be beneficial in the case of overexposed images. For example, both methods in Figure \ref{fig:07_result} and \ref{fig:13_result} succeeded in increasing the contrast between the person's background, face, and contrast between letters, and page.
 
-For quantitative comparison, we compute the Michelson contrast and PSNR~\cite{asamoah2018measuring} of each enhanced image in~\Cref{tab:image_metrics}. The higher value of contrast indicates better enhancement. The table demonstrates that our proposed methods (especially GA) are effective in image contrast enhancement. 
+For quantitative comparison, we compute the Michelson contrast and PSNR~\cite{asamoah2018measuring} of each enhanced image in~\Cref{tab:image_metrics} through Hill Climbing (HC), Genetic Algorithm (GA) variants of the proposed method. We compare similar metrics with images enhanced through Histogram Equalization (HE). The higher value of contrast indicates better enhancement. The table demonstrates that our proposed methods (especially GA) are effective in image contrast enhancement in most of the images. HE has performed better in contrast metrics but has performed worse in PSNR. Upon visual inspection, it shows that although HE manages to increase contrast by darkening the dark region and brightening bright region, it makes the image noisy (grainy feature). This explains the worse performance in PSNR. 
+
+We can see only one metric does not show all sides of improvement by the same methods. The visual quality of the image is a subjective manner. Hence, for a more complete and subjective assessment of visual quality assessment, we have done a survey on our method-enhanced image which we present in the next section.
 
 \subsection{Survey}
 \label{subsection:exp_result_survey}
@@ -330,39 +332,39 @@ From Figure \ref{fig:survey_result}(a), GA shows a better mean score than HC (me
 
 \begin{table}[t]
     \centering
-    \begin{tabular}{|c|c|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
         \hline
-        \multirow{2}{1cm}{Image} & \multirow{2}{1cm}{Contrast} & \multicolumn{2}{|c|}{Mod. Contrast} & \multicolumn{2}{|c|}{Mod. PSNR} \\
-        \cline{3-6}
-         &  & HC & GA & HC & GA \\
+        \multirow{2}{6mm}{Image} & \multirow{2}{8mm}{Contrast} & \multicolumn{3}{|c|}{Mod. Contrast} & \multicolumn{3}{|c|}{Mod. PSNR} \\
+        \cline{3-8}
+         & & HE & HC & GA & HE & HC & GA \\
         \hline
-          \ref{fig:07_result} & 0.307 & 0.711 & 0.738 & 13.115 & 13.191 \\
+          \ref{fig:07_result} & 0.307 & 1.000 & 0.711 & 0.738 & 12.178 & 13.115 & 13.191 \\
         \hline
-          \ref{fig:house_result} & 1.000 & 1.000 & 0.913 & 18.316 & 16.313 \\
+          \ref{fig:house_result} & 1.000 & 1.000 & 1.000 & 0.913 & 18.272 & 18.316 & 16.313 \\
         \hline
-          \ref{fig:jetplane_result} & 0.894 & 1.000 & 0.909 & 12.967 & 15.260 \\
+          \ref{fig:jetplane_result} & 0.894 & 1.000 & 1.000 & 0.909 & 12.077 & 12.967 & 15.260 \\
         \hline
-          \ref{fig:13_result} & 0.802 & 0.893 & 0.903 & 7.553 & 9.689 \\
+          \ref{fig:13_result} & 0.802 & 1.000 & 0.893 & 0.903 & 6.322 & 7.553 & 9.689 \\
         \hline
-          \ref{fig:06_result} & 1.000 & 1.000 & 0.912 & 13.239 & 15.925 \\
+          \ref{fig:06_result} & 1.000 & 1.000 & 1.000 & 0.912 & 9.554 & 13.239 & 15.925 \\
         \hline
-          \ref{fig:pirate_result} & 0.774 & 0.791 & 0.843 & 17.681 & 18.644 \\
+          \ref{fig:pirate_result} & 0.774 & 1.000 & 0.791 & 0.843 & 18.220 & 17.681 & 18.644 \\
         \hline
-          \ref{fig:08_result} & 0.339 & 0.262 & 0.500 & 14.787 & 12.978 \\
+          \ref{fig:08_result} & 0.339 & 1.000 & 0.262 & 0.500 & 10.598 & 14.787 & 12.978 \\
         \hline
-          \ref{fig:11_result} & 0.360 & 0.320 & 0.399 & 6.510 & 11.110 \\
+          \ref{fig:11_result} & 0.360 & 1.000 & 0.320 & 0.399 & 7.442 & 6.510 & 11.110 \\
         \hline
-          \ref{fig:12_result} & 0.917 & 0.908 & 0.903 & 6.850 & 13.004 \\
+          \ref{fig:12_result} & 0.917 & 1.000 & 0.908 & 0.903 & 8.438 & 6.850 & 13.004 \\
         \hline
-        \ref{fig:09_result} & 1.000 & 0.923 & 0.913 & 13.545 & 13.161 \\
+        \ref{fig:09_result} & 1.000 & 1.000 & 0.923 & 0.913 & 6.845 & 13.545 & 13.161 \\
         \hline
-          \ref{fig:10_result} & 0.925 & 0.902 & 0.909 & 12.781 & 14.873 \\
+          \ref{fig:10_result} & 0.925 & 1.000 & 0.902 & 0.909 & 9.614 & 12.781 & 14.873 \\
         \hline
-          \ref{fig:lake_result} & 1.000 & 0.889 & 0.903 & 13.742 & 17.269 \\
+          \ref{fig:lake_result} & 1.000 & 1.000 & 0.889 & 0.903 & 24.806 & 13.742 & 17.269 \\
         \hline
-          \ref{fig:lenagray_result} & 0.836 & 0.916 & 0.886 & 16.009 & 16.740 \\
+          \ref{fig:lenagray_result} & 0.836 & 1.000 & 0.916 & 0.886 & 19.460 & 16.009 & 16.740 \\
         \hline
         \end{tabular}
-    \caption{Michelson contrast and PSNR of enhanced images, the contrast of reference image is in the second column}
+    \caption{Michelson contrast and PSNR of proposed and histogram equalization (HE) enhanced images, the contrast of reference image is in the second column. Image column values are the references to the figures}
     \label{tab:image_metrics}
 \end{table}

@@ -1,1 +1,1 @@
-# dicta-24
+# nsyss-24

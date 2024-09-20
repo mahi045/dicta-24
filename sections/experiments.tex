@@ -29,7 +29,7 @@ As an outcome of our technique, the enhanced images are more natural looking in 
 
 A downside of our method is that some black portions (e.g., Figures \ref{fig:house_output_image_hc}, \ref{fig:house_output_image_ga}) are unnecessarily darkened. This can be beneficial in the case of overexposed images. For example, both methods in Figure \ref{fig:07_result} and \ref{fig:13_result} are succeeded in increasing the contrast between the person's background, face, and contrast between letters and page.
 
-For quantitative comparisons, we compute the Michelson contrast~\cite{rizzi2004proposal} and PSNR~\cite{asamoah2018measuring} of each enhanced image in~\Cref{tab:image_metrics} through Hill Climbing (HC) and Genetic Algorithm (GA) variants of the proposed methods. 
+For quantitative comparisons, we compute the Michelson contrast~\cite{rizzi2004proposal}, PSNR~\cite{asamoah2018measuring}, and SSIM~\cite{WBSS2004} of each enhanced image in~\Cref{tab:image_metrics} through Hill Climbing (HC) and Genetic Algorithm (GA) variants of the proposed methods. 
 We compare similar metrics with images enhanced through histogram equalization (HE). 
 For the sake of comparative analysis, we compare our result with two state-of-the-art methods: Dual channel~\cite{SZGZZ2018} and AGCWD~\cite{HCC2012}.
 The higher value of contrast indicates better enhancement. The table demonstrates that our proposed methods (especially GA) are effective in image contrast enhancement in most of the images. HE has performed better in contrast metrics but has performed worse in the PSNR metric. Upon visual inspections, it reveals that although HE manages to increase contrast by darkening the dark region and brightening bright region, it makes the image noisy (grainy feature). This explains the worse performance in the PSNR metric. 
@@ -89,12 +89,12 @@ From Figure \ref{fig:survey_result}(a), GA shows a better mean score than HC (me
     \label{fig:07_image_he}
   \end{subfigure}
   \begin{subfigure}[b]{0.16\textwidth}%
-    \includegraphics[width=\linewidth]{figures/agcwd/07_agcwd.jpg}
+    \includegraphics[width=\linewidth]{figures/agcwd/07_output.jpg}
     \subcaption[]{AGCWD}{}
     \label{fig:07_image_agcwd}
   \end{subfigure}
   \begin{subfigure}[b]{0.16\textwidth}%
-    \includegraphics[width=\linewidth]{figures/dual/07.jpg_dual.jpg}
+    \includegraphics[width=\linewidth]{figures/dual/07_output.jpg}
     \subcaption[]{Dual}{}
     \label{fig:07_image_dual}
   \end{subfigure}
@@ -146,12 +146,12 @@ From Figure \ref{fig:survey_result}(a), GA shows a better mean score than HC (me
     \label{fig:house_image_he}
   \end{subfigure}
   \begin{subfigure}[b]{0.16\textwidth}
-    \includegraphics[width=\linewidth]{figures/agcwd/house_agcwd.jpg}
+    \includegraphics[width=\linewidth]{figures/agcwd/house_output.jpg}
     \subcaption[]{AGCWD}{}
     \label{fig:house_image_agcwd}
   \end{subfigure}
   \begin{subfigure}[b]{0.16\textwidth}
-    \includegraphics[width=\linewidth]{figures/dual/house.tif_dual.jpg}
+    \includegraphics[width=\linewidth]{figures/dual/house_output.jpg}
     \subcaption[]{Dual}{}
     \label{fig:house_image_dual}
   \end{subfigure}
@@ -182,12 +182,12 @@ From Figure \ref{fig:survey_result}(a), GA shows a better mean score than HC (me
     \label{fig:jetplane_image_he}
   \end{subfigure}
   \begin{subfigure}[b]{0.16\textwidth}
-    \includegraphics[width=\linewidth]{figures/agcwd/jetplane_agcwd.jpg}
+    \includegraphics[width=\linewidth]{figures/agcwd/jetplane_output.jpg}
     \subcaption[]{AGCWD}{}
     \label{fig:jetplane_image_agcwd}
   \end{subfigure}
   \begin{subfigure}[b]{0.16\textwidth}
-    \includegraphics[width=\linewidth]{figures/dual/jetplane.tif_dual.jpg}
+    \includegraphics[width=\linewidth]{figures/dual/jetplane_output.jpg}
     \subcaption[]{Dual}{}
     \label{fig:jetplane_image_dual}
   \end{subfigure}
@@ -258,12 +258,12 @@ From Figure \ref{fig:survey_result}(a), GA shows a better mean score than HC (me
     \label{fig:13_image_he}
   \end{subfigure}
   \begin{subfigure}[b]{0.16\textwidth}
-    \includegraphics[width=\linewidth]{figures/agcwd/13_agcwd.jpg}
+    \includegraphics[width=\linewidth]{figures/agcwd/13_output.jpg}
     \subcaption[]{AGCWD}{}
     \label{fig:13_image_agcwd}
   \end{subfigure}
   \begin{subfigure}[b]{0.16\textwidth}
-    \includegraphics[width=\linewidth]{figures/dual/13.jpg_dual.jpg}
+    \includegraphics[width=\linewidth]{figures/dual/13_output.jpg}
     \subcaption[]{Dual}{}
     \label{fig:13_image_dual}
   \end{subfigure}
@@ -375,12 +375,12 @@ From Figure \ref{fig:survey_result}(a), GA shows a better mean score than HC (me
     \label{fig:06_image_he}
   \end{subfigure}
   \begin{subfigure}[b]{0.16\textwidth}
-    \includegraphics[width=\linewidth]{figures/agcwd/06_agcwd.jpg}
+    \includegraphics[width=\linewidth]{figures/agcwd/06_output.jpg}
     \subcaption[]{AGCWD}{}
     \label{fig:06_image_agcwd}
   \end{subfigure}
   \begin{subfigure}[b]{0.16\textwidth}
-    \includegraphics[width=\linewidth]{figures/dual/06.jpg_dual.jpg}
+    \includegraphics[width=\linewidth]{figures/dual/06_output.jpg}
     \subcaption[]{Dual}{}
     \label{fig:06_image_dual}
   \end{subfigure}
@@ -410,12 +410,12 @@ From Figure \ref{fig:survey_result}(a), GA shows a better mean score than HC (me
     \label{fig:pirate_image_he}
   \end{subfigure}
   \begin{subfigure}[b]{0.16\textwidth}
-    \includegraphics[width=\linewidth]{figures/agcwd/pirate_agcwd.jpg}
+    \includegraphics[width=\linewidth]{figures/agcwd/pirate_output.jpg}
     \subcaption[]{AGCWD}{}
     \label{fig:pirate_image_agcwd}
   \end{subfigure}
   \begin{subfigure}[b]{0.16\textwidth}
-    \includegraphics[width=\linewidth]{figures/dual/pirate.tif_dual.jpg}
+    \includegraphics[width=\linewidth]{figures/dual/pirate_output.jpg}
     \subcaption[]{Dual}{}
     \label{fig:pirate_image_dual}
   \end{subfigure}
@@ -444,12 +444,12 @@ From Figure \ref{fig:survey_result}(a), GA shows a better mean score than HC (me
     \label{fig:08_image_he}
   \end{subfigure}
   \begin{subfigure}[b]{0.16\textwidth}
-    \includegraphics[width=\linewidth]{figures/agcwd/08_agcwd.jpg}
+    \includegraphics[width=\linewidth]{figures/agcwd/08_output.jpg}
     \subcaption[]{AGCWD}{}
     \label{fig:08_image_agcwd}
   \end{subfigure}
   \begin{subfigure}[b]{0.16\textwidth}
-    \includegraphics[width=\linewidth]{figures/dual/08.jpg_dual.jpg}
+    \includegraphics[width=\linewidth]{figures/dual/08_output.jpg}
     \subcaption[]{Dual}{}
     \label{fig:08_image_dual}
   \end{subfigure}
@@ -472,39 +472,39 @@ From Figure \ref{fig:survey_result}(a), GA shows a better mean score than HC (me
 
 \begin{table*}[t]
     \centering
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
         \hline
-        \multirow{2}{8mm}{Image} & \multirow{2}{10mm}{Contrast} & \multicolumn{5}{|c|}{Contrast} & \multicolumn{5}{|c|}{PSNR} \\
-        \cline{3-12}
-         & & HE & AGCWD & Dual & HC & GA & HE & AGCWD & Dual & HC & GA \\
+        \multirow{2}{8mm}{Image} & \multirow{2}{9mm}{Contrast} & \multicolumn{5}{|c|}{Contrast} & \multicolumn{5}{|c|}{PSNR} & \multicolumn{5}{|c|}{SSIM} \\
+        \cline{3-17}
+         & & HE & AGC & Dual & HC & GA & HE & AGC & Dual & HC & GA & HE & AGC & Dual & HC & GA \\
         \hline
-          \cref{fig:07_result} & 0.307 & 1.000 & 0.482 & 1.000 & 0.711 & 0.738 & 12.178 & 14.059 & 14.200 & 13.115 & 13.191 \\
+          \cref{fig:07_result} & 0.307 & 1.000 & 0.482 & 1.000 & 0.711 & 0.738 & 12.178 & 14.059 & 14.200 & 13.115 & 13.191 & 0.46 & 0.76 & 0.62 & 0.65 & 0.74\\
         \hline
-          \cref{fig:house_result} & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 0.913 & 18.272 & 15.081 & 12.480 & 18.316 & 16.313 \\
+          \cref{fig:house_result} & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 0.913 & 18.272 & 15.081 & 12.480 & 18.316 & 16.313 & 0.67 & 0.86 & 0.81 & 0.78 & 0.86\\
         \hline
-          \cref{fig:jetplane_result} & 0.894 & 1.000 & 0.889 & 1.000 & 1.000 & 0.909 & 12.077 & 17.231 & 12.559 & 12.967 & 15.260 \\
+          \cref{fig:jetplane_result} & 0.894 & 1.000 & 0.889 & 1.000 & 1.000 & 0.909 & 12.077 & 17.231 & 12.559 & 12.967 & 15.260 & 0.55 & 0.96 & 0.79 & 0.84 & 0.9\\
         \hline
-          \cref{fig:13_result} & 0.802 & 1.000 & 0.802 & 1.000 & 0.893 & 0.903 & 6.322 & 31.501 & 22.375 & 7.553 & 9.689 \\
+          \cref{fig:13_result} & 0.802 & 1.000 & 0.802 & 1.000 & 0.893 & 0.903 & 6.322 & 31.501 & 22.375 & 7.553 & 9.689 & 0.29 & 0.95 & 0.89 & 0.61 & 0.89\\
         \hline
-          \cref{fig:06_result} & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 0.912 & 9.554 & 18.066 & 21.031 & 13.239 & 15.925 \\
+          \cref{fig:06_result} & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 0.912 & 9.554 & 18.066 & 21.031 & 13.239 & 15.925 & 0.52 & 0.98 & 0.84 & 0.88 & 0.95\\
         \hline
-          \cref{fig:pirate_result} & 0.774 & 1.000 & 0.752 & 1.000 & 0.791 & 0.843 & 18.220 & 14.389 & 17.006 & 17.681 & 18.644 \\
+          \cref{fig:pirate_result} & 0.774 & 1.000 & 0.752 & 1.000 & 0.791 & 0.843 & 18.220 & 14.389 & 17.006 & 17.681 & 18.644 & 0.87 & 0.87 & 0.72 & 0.76 & 0.83\\
         \hline
-        \cref{fig:08_result} & 0.339 & 1.000 & 1.000 & 1.000 & 0.262 & 0.500 & 10.598 & 22.720 & 13.632 & 14.787 & 12.978 \\
+        \cref{fig:08_result} & 0.339 & 1.000 & 1.000 & 1.000 & 0.262 & 0.500 & 10.598 & 22.720 & 13.632 & 14.787 & 12.978 & 0.67 & 0.93 & 0.77 & 0.69 & 0.91\\
         \hline
-        \cref{fig:11_result} & 0.360 & 1.000 & 0.360 & 0.727 & 0.320 & 0.399 & 7.442 & 41.648 & 33.793 & 6.510 & 11.110 \\
+        \cref{fig:11_result} & 0.360 & 1.000 & 0.360 & 0.727 & 0.320 & 0.399 & 7.442 & 41.648 & 33.793 & 6.510 & 11.110 & 0.3 & 0.99 & 0.98 & 0.7 & 0.94\\
         \hline
-          \cref{fig:12_result} & 0.917 & 1.000 & 1.000 & 1.000 & 0.908 & 0.903 & 8.438 & 27.879 & 16.463 & 6.850 & 13.004 \\
+          \cref{fig:12_result} & 0.917 & 1.000 & 1.000 & 1.000 & 0.908 & 0.903 & 8.438 & 27.879 & 16.463 & 6.850 & 13.004 & 0.48 & 0.97 & 0.63 & 0.69 & 0.94\\
         \hline
-        \cref{fig:09_result} & 1.000 & 1.000 & 1.000 & 1.000 & 0.923 & 0.913 & 6.845 & 33.446 & 22.716 & 13.545 & 13.161 \\
+        \cref{fig:09_result} & 1.000 & 1.000 & 1.000 & 1.000 & 0.923 & 0.913 & 6.845 & 33.446 & 22.716 & 13.545 & 13.161 & 0.24 & 0.98 & 0.88 & 0.93 & 0.95\\
         \hline
-          \cref{fig:10_result} & 0.925 & 1.000 & 0.931 & 1.000 & 0.902 & 0.909 & 9.614 & 17.897 & 15.826 & 12.781 & 14.873 \\
+          \cref{fig:10_result} & 0.925 & 1.000 & 0.931 & 1.000 & 0.902 & 0.909 & 9.614 & 17.897 & 15.826 & 12.781 & 14.873 & 0.53 & 0.98 & 0.79 & 0.91 & 0.95\\
         \hline
-          \cref{fig:lake_result} & 1.000 & 1.000 & 0.992 & 1.000 & 0.889 & 0.903 & 24.806 & 16.212 & 10.564 & 13.742 & 17.269 \\
+          \cref{fig:lake_result} & 1.000 & 1.000 & 0.992 & 1.000 & 0.889 & 0.903 & 24.806 & 16.212 & 10.564 & 13.742 & 17.269 & 0.87 & 0.64 & 0.89 & 0.66 & 0.82\\
         \hline
-          \cref{fig:lenagray_result} & 0.836 & 1.000 & 0.821 & 1.000 & 0.916 & 0.886 & 19.460 & 14.725 & 12.843 & 16.009 & 16.740 \\
+          \cref{fig:lenagray_result} & 0.836 & 1.000 & 0.821 & 1.000 & 0.916 & 0.886 & 19.460 & 14.725 & 12.843 & 16.009 & 16.740 & 0.88 & 0.88 & 0.76 & 0.79 & 0.84\\
         \hline
         \end{tabular}
-    \caption{Michelson contrast and PSNR of proposed methods, histogram equalization, dual channel, and adaptive gamma correction enhanced images, the contrast of reference image is in the second column. The image column contains the references to the input images.}
+    \caption{Michelson contrast, PSNR, and SSIM of proposed methods, histogram equalization (HE), dual channel (Dual), and adaptive gamma correction enhanced images (AGC), the contrast of reference image is in the second column. The image column contains the references to the input images.}
     \label{tab:image_metrics}
 \end{table*}

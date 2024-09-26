@@ -16,7 +16,7 @@ from skimage.metrics import structural_similarity
 """
 FOLDER_ROOT = "."
 ORIGINAL_FOLDER = "original"
-METHODS_TO_COMPARE = ["hc_trap_split", "ga_elitist", "agcwd", "dual"]
+METHODS_TO_COMPARE = ["hc_trap_split", "ga_elitist", "agcwd", "dual", "CLAHE"]
 
 def calc_contrast_michelson(frame):
     # print(frame)
@@ -73,7 +73,9 @@ if __name__ == '__main__':
             data_list.append(contrast)
             data_list.append(psnr)
             data_list.append(ssim)
-        # print(data_list)
+        print(data_list)
         # print for latex tabular contrast & hc mod contrast & ga mod contrast & hc mod psnr & ga mod psnr
-        print(data_list[0], " & ".join(["{0:.3f}".format(data) for data in [data_list[1], data_list[2],data_list[4],data_list[6], data_list[3],data_list[5],data_list[7], data_list[8], data_list[9], data_list[10], data_list[11]]]))
-        print(round(data_list[4], 2), "&", round(data_list[13], 2), "&", round(data_list[16], 2), "&", round(data_list[7], 2), "&", round(data_list[10], 2))
+        # print(data_list[0], " & ".join(["{0:.3f}".format(data) for data in [data_list[1], data_list[2],data_list[4],data_list[6], data_list[3],data_list[5],data_list[7], data_list[8], data_list[9], data_list[10], data_list[11]]]))
+        print(round(data_list[2], 2), "&", round(data_list[11], 2), "&", round(data_list[14], 2), "&", round(data_list[17], 2), "&", round(data_list[5], 2), "&", round(data_list[8], 2))
+        print(round(data_list[3], 2), "&", round(data_list[12], 2), "&", round(data_list[15], 2), "&", round(data_list[18], 2), "&", round(data_list[6], 2), "&", round(data_list[9], 2))
+        print(round(data_list[4], 2), "&", round(data_list[13], 2), "&", round(data_list[16], 2), "&", round(data_list[19], 2), "&", round(data_list[7], 2), "&", round(data_list[10], 2))

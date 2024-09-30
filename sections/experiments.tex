@@ -29,12 +29,12 @@ As an outcome of our technique, the enhanced images are more natural looking in 
 
 A downside of our method is that some black portions (e.g., Figures \ref{fig:house_output_image_hc}, \ref{fig:house_output_image_ga}) are unnecessarily darkened. This can be beneficial in the case of overexposed images. For example, both methods in Figure \ref{fig:07_result} and \ref{fig:13_result} are succeeded in increasing the contrast between the person's background, face, and contrast between letters and page.
 
-For quantitative comparisons, we compute the Michelson contrast~\cite{rizzi2004proposal}, PSNR~\cite{asamoah2018measuring}, and SSIM~\cite{WBSS2004} of each enhanced image in~\Cref{tab:image_metrics} through Hill Climbing (HC) and Genetic Algorithm (GA) variants of the proposed methods. 
+For quantitative comparisons, we compute the Michelson contrast~\cite{michelson1995studies,rizzi2004proposal}, PSNR~\cite{asamoah2018measuring}, and SSIM~\cite{WBSS2004} of each enhanced image in~\Cref{tab:image_metrics} through Hill Climbing (HC) and Genetic Algorithm (GA) variants of the proposed methods. 
 We compare similar metrics with images enhanced through histogram equalization (HE). 
-For the sake of comparative analysis, we compare our result with two state-of-the-art methods: Dual channel~\cite{SZGZZ2018} and AGCWD~\cite{HCC2012}.
-The higher value of contrast indicates better enhancement. The table demonstrates that our proposed methods (especially GA) are effective in image contrast enhancement in most of the images. HE has performed better in contrast metrics but has performed worse in the PSNR metric. Upon visual inspections, it reveals that although HE manages to increase contrast by darkening the dark region and brightening bright region, it makes the image noisy (grainy feature). This explains the worse performance in the PSNR metric. 
+For the sake of comparative analysis, we compare our result with two state-of-the-art methods: Dual channel~\cite{SZGZZ2018} and AGCWD~\cite{HCC2012}. The higher value of contrast indicates better contrast by increasing the difference between the darkest and brightest pixels. The table demonstrates that our proposed methods (especially GA) are effective in image contrast enhancement in most of the images compared to the original image. HE, Dual, and AGCWD have achieved better contrast metric value. Upon visual inspection, it is revealed that these three methods manage to increase contrast by darkening the dark region and brightening the bright region. In all presented images, Dual and AGCW affect oppositely compared to our method, that is they overexpose the already bright area in the images. This explains why HE, AGCW, and Dual is doing well in the Michelson contrast metric. Another observation is that out of all $5$ methods, HE introduces noticeable artifacts (grainy feature in Figures \ref{fig:07_image_he}, \ref{fig:house_image_he}, \ref{fig:13_image_he}, \ref{fig:12_image_he}, \ref{fig:13_image_he}). This explains the lower value attained in SSIM and PSNR metrics in most of the images by HE compared to other methods. Our method consistently achieved near $1$ SSIM value (worst is $>0.7$) compared to the other three. This indicates our method will introduce fewer artifacts (grainy feature, emphasized boundary, whitened area, etc.).
 
 We can realize that only one metric does not show all sides of improvement by the same methods. The visual quality of the image is a subjective manner. For a more complete and subjective assessment of the visual quality, we have conducted a survey on our method enhanced images which we present in the next section.
+
 
 \subsection{Survey}
 \label{subsection:exp_result_survey}
@@ -474,7 +474,7 @@ From Figure \ref{fig:survey_result}(a), GA shows a better mean score than HC (me
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
         \hline
-        \multirow{2}{8mm}{Image} & \multirow{2}{9mm}{Contrast} & \multicolumn{5}{|c|}{Contrast} & \multicolumn{5}{|c|}{PSNR} & \multicolumn{5}{|c|}{SSIM} \\
+        \multirow{2}{8mm}{Image} & \multirow{2}{10mm}{Contrast} & \multicolumn{5}{|c|}{Contrast} & \multicolumn{5}{|c|}{PSNR} & \multicolumn{5}{|c|}{SSIM} \\
         \cline{3-17}
          & & HE & AGC & Dual & HC & GA & HE & AGC & Dual & HC & GA & HE & AGC & Dual & HC & GA \\
         \hline

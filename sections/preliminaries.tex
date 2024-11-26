@@ -4,43 +4,43 @@
 % Fuzzy logic is used to bridge mathematical operations with linguistic rules \cite{sancho1999methods,singpurwalla2004membership}. As linguistic rule means there are imprecise definitions and subjectivity, the concept of a fuzzy set is used to define the entity on which the operation will be applied. Modeling impreciseness helps us to incorporate subjectivity and expert knowledge \cite{singpurwalla2004membership}. Application of fuzzy logic makes sense in image enhancement as image quality is an imprecise and subjective idea \cite{tizhoosh1998fuzzy,chacon2006fuzzy}.
 
 Fuzzy image processing encompasses a range of techniques designed to understand, represent, and process images, along with their segments and features, as {\em fuzzy sets}. 
-The workflow is illustrated in~\Cref{fig:fii}.
+% The workflow is illustrated in~\Cref{fig:fii}.
 The process begins with the {\em fuzzification} (or encoding) of image data, followed by the {\em defuzzification} (or decoding) of the results. 
 These steps enable the application of fuzzy techniques to image processing. 
 A {\em membership modification}~\cite{haussecker2000fuzzy} technique lies at the core of fuzzy image processing.
 
-\begin{figure}
-    \centering
-    \begin{tikzpicture}[
-        node distance=0.9cm and 0.9cm,
-        every node/.style={draw, align=center, rounded corners},
-        every edge/.style={draw, -{Latex[length=3mm]}}
-    ]
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}[
+%         node distance=0.9cm and 0.9cm,
+%         every node/.style={draw, align=center, rounded corners},
+%         every edge/.style={draw, -{Latex[length=3mm]}}
+%     ]
     
-    % Nodes
+%     % Nodes
 
-    \node (expert) {expert knowledge};
-    \node (fuzzification) [below left=of expert] {image\\ fuzzification};
-    % \node (input) [left =of fuzzification] {Input image};
-    \node (modification) [below=of expert] {membership\\ modification};
-    \node (defuzzification) [below right=of expert] {image\\ defuzzification};
-    \node (fuzzy) [below=of modification] {fuzzy logic \\ fuzzy set theory};
-    % \node (output) [right =of defuzzification] {Output image};
-    % Edges
-    \draw[->] (expert) -- (fuzzification);
-    \draw[->] (expert) -- (modification);
-    \draw[->] (expert) -- (defuzzification);
-    \draw[->] (fuzzification) -- (modification);
-    \draw[->] (modification) -- (defuzzification);
-    \draw[->] (fuzzy) -- (fuzzification);
-    \draw[->] (fuzzy) -- (modification);
-    \draw[->] (fuzzy) -- (defuzzification);
-    % \draw[->] (input) -- (fuzzification);
-    % \draw[->] (defuzzification) -- (output);
-    \end{tikzpicture}
-    \caption{The workflow of fuzzy image processing}
-    \label{fig:fii}
-\end{figure}
+%     \node (expert) {expert knowledge};
+%     \node (fuzzification) [below left=of expert] {image\\ fuzzification};
+%     % \node (input) [left =of fuzzification] {Input image};
+%     \node (modification) [below=of expert] {membership\\ modification};
+%     \node (defuzzification) [below right=of expert] {image\\ defuzzification};
+%     \node (fuzzy) [below=of modification] {fuzzy logic \\ fuzzy set theory};
+%     % \node (output) [right =of defuzzification] {Output image};
+%     % Edges
+%     \draw[->] (expert) -- (fuzzification);
+%     \draw[->] (expert) -- (modification);
+%     \draw[->] (expert) -- (defuzzification);
+%     \draw[->] (fuzzification) -- (modification);
+%     \draw[->] (modification) -- (defuzzification);
+%     \draw[->] (fuzzy) -- (fuzzification);
+%     \draw[->] (fuzzy) -- (modification);
+%     \draw[->] (fuzzy) -- (defuzzification);
+%     % \draw[->] (input) -- (fuzzification);
+%     % \draw[->] (defuzzification) -- (output);
+%     \end{tikzpicture}
+%     \caption{The workflow of fuzzy image processing}
+%     \label{fig:fii}
+% \end{figure}
 
 
 \subsection*{Fuzzy Sets for Intensity Transformation}
